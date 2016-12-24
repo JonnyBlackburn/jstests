@@ -1,0 +1,14 @@
+{
+  "name": "jstests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha src/index.js"
+  },
+  "author": "Jonny B",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
