@@ -4,7 +4,9 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha src/index.js"
+    "test": "mocha src/index.js",
+    "testArrays": "mocha src/arrayTests.js",
+    "testPromises": "mocha src/promiseTests.js"
   },
   "author": "Jonny B",
   "license": "ISC",
