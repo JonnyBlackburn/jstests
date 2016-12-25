@@ -28,9 +28,9 @@ An attempt to learn es6 features by writing tests for them.
 
 ## Test written
 
-1. Array
-..+ .from()
-..+ .of()
-..+ .prototype.copyWithin()
-..+ .prototype.fill()
-2. Promise
++ Array
+ + .from()
+ + .of()
+ + .prototype.copyWithin()
+ + .prototype.fill()
++ Promise
