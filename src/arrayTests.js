@@ -2,7 +2,7 @@ var assert = require('assert');
 
 describe('Array', function() {
 
-	describe('Array.from() - creates a new Array instance from an array-like or iterable object.', function() {
+	describe('Array.from() - creates a new Array instance from an array-like or iterable object', function() {
 
 		it('call "Array.from" with a string', function() {
 			const fooString = "foo";
@@ -47,7 +47,7 @@ describe('Array', function() {
 
 	});
 
-	describe('Array.of() - creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.', function() {
+	describe('Array.of() - creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments', function() {
 
 		it('shouldnt be confused with the Array constructor, which creates an array of x length', function() {
 			const array = Array.of("foo");
@@ -154,6 +154,52 @@ describe('Array', function() {
 				assert.deepEqual(["foo", "foo", 0 , 1], array.fill("foo", 1, -2));
 			});
 			
+		});
+
+	});
+
+	describe('Array.prototype.find() - returns the first element in the array that satisfies the provided testing function', function() {
+
+		describe('testing function - first parameter element', function() {
+
+			it('returns the first matching value', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual("foo", array.find(element => typeof element === "string"));
+			});
+
+			it('returns undefined if no match', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(void 0, array.find(element => element === "foobar"));
+			});
+
+		});
+
+		describe('testing function - second parameter index', function() {
+
+			it('returns the first matching value', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual("bar", array.find((element, index) => index > 0));
+			});
+
+			it('returns undefined if no match', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(void 0, array.find((element, index)=> index > 5));
+			});
+
+		});
+
+		describe('testing function - third parameter array', function() {
+
+			it('returns the first matching value', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual("foo", array.find((element, index, array) => element === array[0]));
+			});
+
+			it('returns undefined if no match', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(void 0, array.find((element, index, array)=> index > array.length));
+			});
+
 		});
 
 	});

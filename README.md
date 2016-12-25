@@ -33,4 +33,5 @@ An attempt to learn es6 features by writing tests for them.
  + .of()
  + .prototype.copyWithin()
  + .prototype.fill()
+ + .prototype.find()
 + Promise
