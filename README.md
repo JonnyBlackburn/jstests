@@ -31,4 +31,6 @@ An attempt to learn es6 features by writing tests for them.
 + Array
 ..+ .from()
 ..+ .of()
-..+ .copyWithin()
+..+ .prototype.copyWithin()
+..+ .prototype.fill()
++ Promise
