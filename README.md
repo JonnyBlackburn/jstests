@@ -34,4 +34,5 @@ An attempt to learn es6 features by writing tests for them.
  + .prototype.copyWithin()
  + .prototype.fill()
  + .prototype.find()
+ + .prototype.findIndex()
 + Promise

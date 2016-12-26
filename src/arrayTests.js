@@ -204,4 +204,50 @@ describe('Array', function() {
 
 	});
 
+	describe('Array.prototype.findIndex() - returns an index of the first element in the array that satisfies the provided testing function', function() {
+
+		describe('testing function - first parameter element', function() {
+
+			it('returns the index of the first matching value', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(0, array.findIndex(element => typeof element === "string"));
+			});
+
+			it('returns -1 if no match', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(-1, array.findIndex(element => element === "foobar"));
+			});
+
+		});
+
+		describe('testing function - second parameter index', function() {
+
+			it('returns the index of the first matching value', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(1, array.findIndex((element, index) => index > 0));
+			});
+
+			it('returns -1 if no match', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(-1, array.findIndex((element, index)=> index > 5));
+			});
+
+		});
+
+		describe('testing function - third parameter array', function() {
+
+			it('returns the index of the first matching value', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(0, array.findIndex((element, index, array) => element === array[0]));
+			});
+
+			it('returns -1 if no match', function() {
+				let array = ["foo", "bar", 0, 1];
+				assert.deepEqual(-1, array.findIndex((element, index, array)=> index > array.length));
+			});
+
+		});
+
+	});
+
 });
